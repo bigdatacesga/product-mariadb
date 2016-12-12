@@ -1,0 +1,23 @@
+{
+  "dnsname": "{{ clusterid }}",
+  "nodes": {
+    "mysql_node0": {
+      "docker_image": "docker-registry.cesga.es:5000/mariadb:10.1.19",
+      "docker_opts": "-e MYSQL_ROOT_PASSWORD={{ opts['password'] }} ",
+      "cpu": {{ opts['cpu'] }},
+      "mem": {{ opts['mem'] }},
+      "disks": {
+        "disk0": {
+          "destination": "/var/lib/mysql"
+        }
+      },
+      "networks": {
+        "eth0": {"type": "dynamic", "networkname": "storage"},
+        "eth1": {"type": "dynamic", "networkname": "admin" }
+      }
+    }
+  },
+  "services": {
+      "mysql": { "nodes": ["mysql_node0"] }
+  }
+}

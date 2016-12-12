@@ -1,0 +1,16 @@
+{
+    "required": {
+      "password": "secret"
+    },
+    "optional": {
+        "cpu": 2,
+        "mem": 2048
+    },
+    "advanced": {
+    },
+    "descriptions": {
+        "password": "The password that will be set for the MariaDB root superuser account",
+        "cpu": "Number of CPUs per node",
+        "mem": "Memory per node (MB)"
+    }
+}
