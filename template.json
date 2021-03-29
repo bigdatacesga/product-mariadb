@@ -2,7 +2,7 @@
   "dnsname": "{{ clusterid }}",
   "nodes": {
     "mysql_node0": {
-      "docker_image": "docker-registry.cesga.es:5000/mariadb:10.1.19-BETA",
+      "docker_image": "docker-registry.cesga.es:5000/mariadb:10.1.19",
       "docker_opts": "-e MYSQL_ROOT_PASSWORD={{ opts['password'] }} ",
       "cpu": {{ opts['cpu'] }},
       "mem": {{ opts['mem'] }},
